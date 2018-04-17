@@ -1,0 +1,5 @@
+com\objis\contacjsf\test\Test.class
+com\objis\contacjsf\beans\ClientBeans.class
+com\objis\contacjsf\entity\Client_.class
+com\objis\contacjsf\dao\Clientdao.class
+com\objis\contacjsf\entity\Client.class

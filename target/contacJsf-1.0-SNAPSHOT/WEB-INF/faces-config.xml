@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+               <managed-bean>
+                    <managed-bean-name>clientBeans</managed-bean-name>
+                    <managed-bean-class>com.objis.contacjsf.beans.ClientBeans</managed-bean-class>
+                    <managed-bean-scope>session</managed-bean-scope>
+            </managed-bean>
+            <navigation-rule>
+                <display-name>add</display-name>
+                <from-view-id>/add.xhtml</from-view-id>
+                <navigation-case>
+                <from-outcome>list</from-outcome>
+                <to-view-id>/listeClient.xhtml</to-view-id>
+                <redirect />
+                </navigation-case>
+            </navigation-rule>
+            <navigation-rule>
+                <from-view-id>/listeClient.xhtml</from-view-id>
+                <navigation-case>
+                <from-outcome>edit</from-outcome>
+                <to-view-id>/edit.xhtml</to-view-id>
+                <redirect />
+                </navigation-case>
+            </navigation-rule>
+            <navigation-rule>
+                <from-view-id>/edit.xhtml</from-view-id>
+                <navigation-case>
+                <from-outcome>list</from-outcome>
+                <to-view-id>/listeClient.xhtml</to-view-id>
+                <redirect />
+            </navigation-case>
+</navigation-rule>
+</faces-config>

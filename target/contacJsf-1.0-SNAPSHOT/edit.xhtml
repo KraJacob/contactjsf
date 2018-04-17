@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>GESTION DE CONTACT</title>
+    </h:head>
+     <h1>MODIFICATION  D'UN CONTACT</h1>
+ <h:form>
+                 
+    <p:growl id="growl" sticky="true" showDetail="true"/>
+ 
+    <p:wizard flowListener="#{userWizard.onFlowProcess}">
+        <p:tab id="personal" title="FORMULAIRE DE MODIFICATION">
+            <p:panel header="Les informations du client">
+                <p:messages />
+                <h:outputLink value="listeClient.xhtml">
+               <h:outputText value="Lister des clients " />
+               </h:outputLink>
+               <h:outputLink value="add.xhtml"> <br />
+               <h:outputText value="Ajouter un client" />
+               </h:outputLink>
+                <h:panelGrid columns="2" columnClasses="label, value">
+                    <h:outputText value="Nom : *" />
+                    <p:inputText value="#{clientBeans.editClient.nom}" required="true" label="Nom"/>
+ 
+                    <h:outputText value="Prénom : *" />
+                    <p:inputText value="#{clientBeans.editClient.prenom}" required="true" label="Prénom"/>
+ 
+                    <h:outputText value="Email : * " />
+                    <p:inputText value="#{clientBeans.editClient.email}" required="true" label="Email"/>
+                    
+                    <h:outputText value="Contact : *" />
+                    <p:inputText value="#{clientBeans.editClient.contact}" required="true" label="Numéro"/>
+                    <h:commandButton value="Valider" action="#{clientBeans.updateClient()}" />
+                    </h:panelGrid>
+                                 
+            </p:panel>
+            
+        </p:tab>
+
+    </p:wizard>
+   
+</h:form>
+
+</html>
